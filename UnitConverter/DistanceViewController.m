@@ -39,11 +39,11 @@
     double metricDistance = [self.txtMetricDistance.text doubleValue];
     MetricDistance *metric = [[MetricDistance alloc] initWithCentimeters:metricDistance];
     
-    
-    [[NSString alloc] initWith]
-    
     ImperialDistance *imperial = [Converter toImperial:metric];
-    self.txtImperialDistance.text = imperial.inches
+    
+    NSString *test1 = [NSString stringWithFormat:@"%.2lf", imperial.inches];
+    
+    self.txtImperialDistance.text = test1;
     
     
 }
