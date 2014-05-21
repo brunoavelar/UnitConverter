@@ -36,19 +36,27 @@
 
 
 - (IBAction)metricDistanceChanged:(id)sender {
+    
     double metricDistance = [self.txtMetricDistance.text doubleValue];
     MetricDistance *metric = [[MetricDistance alloc] initWithCentimeters:metricDistance];
     
     ImperialDistance *imperial = [Converter toImperial:metric];
     
-    NSString *test1 = [NSString stringWithFormat:@"%.2lf", imperial.inches];
+    NSString *imperialText = [NSString stringWithFormat:@"%.2lf", imperial.inches];
     
-    self.txtImperialDistance.text = test1;
-    
-    
+    self.txtImperialDistance.text = imperialText;
 }
 
 - (IBAction)imperialDistanceChanged:(id)sender {
+    
+    double imperialDistance = [self.txtImperialDistance.text doubleValue];
+    ImperialDistance *imperial = [[ImperialDistance alloc] initWithInches:imperialDistance];
+    
+    MetricDistance *metric = [Converter toMetric:imperial];
+    
+    NSString *metricText = [NSString stringWithFormat:@"%.2lf", metric.centimeters];
+    
+    self.txtMetricDistance.text = metricText;
     
 }
 @end

@@ -72,7 +72,7 @@
     
     NSString *metricDistance = self.vc.txtMetricDistance.text;
     
-    XCTAssertEqualObjects(@"200", metricDistance);
+    XCTAssertEqualObjects(@"200.00", metricDistance);
 }
 
 @end
