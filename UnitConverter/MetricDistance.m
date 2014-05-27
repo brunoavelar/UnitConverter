@@ -29,8 +29,6 @@
     return self;
 }
 
-
-
 - (double)meters{
     return self.centimeters / 100;
 }

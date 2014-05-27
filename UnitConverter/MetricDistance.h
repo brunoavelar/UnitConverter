@@ -18,4 +18,11 @@
 @property (nonatomic) double meters;
 @property (nonatomic) double kilometers;
 
+typedef enum metricUnitsTypes
+{
+    Centimeter,
+    Meter,
+    Kilometer
+} MetricUnits;
+
 @end

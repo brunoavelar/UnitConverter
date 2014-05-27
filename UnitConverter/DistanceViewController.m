@@ -34,6 +34,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)metricUnitChanged:(UISegmentedControl *)sender
+{
+   // MetricDistance *metric = [[MetricDistance alloc] initWithCentimeters:metricDistance];
+    // Create a constructor "initWithUnit"
+
+}
 
 - (IBAction)metricDistanceChanged:(id)sender {
     
@@ -57,6 +63,28 @@
     NSString *metricText = [NSString stringWithFormat:@"%.2lf", metric.centimeters];
     
     self.txtMetricDistance.text = metricText;
-    
 }
+
+- (MetricUnits)getSelectedNumericUnit
+{
+    MetricUnits selectedUnit;
+    
+    switch (self.metricUnit.selectedSegmentIndex) {
+        case 0:
+            selectedUnit = Centimeter;
+            break;
+        case 1:
+            selectedUnit = Meter;
+            break;
+        case 2:
+            selectedUnit = Kilometer;
+            break;
+        default:
+            selectedUnit = Centimeter;
+            break;
+    }
+    
+    return selectedUnit;
+}
+
 @end

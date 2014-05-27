@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Weigh View Controller - First-->
@@ -99,6 +99,9 @@
                                     <segment title="meters"/>
                                     <segment title="kilometers"/>
                                 </segments>
+                                <connections>
+                                    <action selector="metricUnitChanged:" destination="QUy-BD-bpt" eventType="valueChanged" id="jcr-vp-PYM"/>
+                                </connections>
                             </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="amI-H6-KF2">
                                 <rect key="frame" x="20" y="193" width="280" height="29"/>
@@ -114,6 +117,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Distance" id="Z7h-1E-pvt"/>
                     <connections>
+                        <outlet property="metricUnit" destination="RlW-n4-8Kw" id="Iaj-3s-oP7"/>
                         <outlet property="txtImperialDistance" destination="XzE-RD-CrV" id="Sdg-NR-GEv"/>
                         <outlet property="txtMetricDistance" destination="JHj-nM-lq0" id="wfo-vA-tgE"/>
                     </connections>

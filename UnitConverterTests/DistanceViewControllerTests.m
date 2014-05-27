@@ -75,4 +75,42 @@
     XCTAssertEqualObjects(@"200.00", metricDistance);
 }
 
+- (void)testChangeCmToMeterShouldUpdateImperialValue
+{
+    self.vc.txtMetricDistance.text = @"10";
+    [self.vc metricUnitChanged: nil];
+    
+    NSString *imperialDistance = self.vc.txtImperialDistance.text;
+    
+    XCTAssertEqualObjects(@"393.70", imperialDistance);
+}
+
+- (void)testGetSelectedNumericUnit0ShouldReturnCm
+{
+    self.vc.metricUnit.selectedSegmentIndex = 0;
+    MetricUnits unit = [self.vc getSelectedNumericUnit];
+    
+    
+    XCTAssertEqual(Centimeter, unit);
+}
+
+- (void)testGetSelectedNumericUnit1ShouldReturnMeter
+{
+    self.vc.metricUnit.selectedSegmentIndex = 1;
+    MetricUnits unit = [self.vc getSelectedNumericUnit];
+    
+    
+    XCTAssertEqual(Meter, unit);
+}
+
+- (void)testGetSelectedNumericUnit2ShouldReturnKm
+{
+    self.vc.metricUnit.selectedSegmentIndex = 2;
+    MetricUnits unit = [self.vc getSelectedNumericUnit];
+    
+    
+    XCTAssertEqual(Kilometer, unit);}
+
+
+
 @end

@@ -18,9 +18,13 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *txtMetricDistance;
 @property (weak, nonatomic) IBOutlet UITextField *txtImperialDistance;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *metricUnit;
 
 - (IBAction)metricDistanceChanged:(id)sender;
 - (IBAction)imperialDistanceChanged:(id)sender;
+- (IBAction)metricUnitChanged:(UISegmentedControl *)sender;
+
+- (MetricUnits) getSelectedNumericUnit;
 
 
 @end
